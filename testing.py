@@ -50,7 +50,7 @@ class AlphaZero:
             # self-play self.num_self_play times
             for spi in range(self.num_self_play):
                 # reset the monte carlo tree
-                self.mcts.reset()
+                self.mcts.reset(self.nnet)
                 new_train_examples = self.execute_episode()
                 sp_examples += new_train_examples
             # add self play examples to example hist
